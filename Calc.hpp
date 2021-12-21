@@ -1,6 +1,14 @@
 #ifndef _CALC_H
 #define _CALC_H
 
-int sum(int x, int y);
-int sub(int x, int y);
+#include <iostream>
+class Student
+{
+public:
+    int score;
+    std::string name;
+    Student();
+    Student(int score, std::string name);
+    bool DisplayResult();
+};
 #endif

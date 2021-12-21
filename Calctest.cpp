@@ -2,23 +2,32 @@
 #include <gmock/gmock.h>
 #include "Calc.hpp"
 
-TEST(SumFunction, Test_1)
+class StudentTest : public testing::Test
 {
-    EXPECT_EQ(5, sum(2, 3));
+    Student s1;
+
+public:
+    // Sets up the test fixture.
+    void SetUp() override
+    {
+        s1.score = 100;
+        s1.name = "moatasem";
+    }
+    // Tears down the test fixture.
+    void TearDown() override
+    {
+    }
+};
+TEST_F(StudentTest, Test_1)
+{
+    EXPECT_TRUE(s1.DisplayResult());
 }
-TEST(SumFunction, Test_2)
+TEST_F(StudentTest, Test_2)
 {
-    EXPECT_NE(5, sum(12, 3));
+    s1.score = 20;
+    EXPECT_FALSE(s1.DisplayResult());
 }
 
-TEST(SubFunction, Test_1)
-{
-    EXPECT_EQ(-1, sub(2, 3));
-}
-TEST(SubFunction, Test_2)
-{
-    EXPECT_NE(8, sum(12, 3));
-}
 int main()
 {
     ::testing::InitGoogleTest();

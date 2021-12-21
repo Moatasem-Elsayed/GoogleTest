@@ -1,9 +1,19 @@
-int sum(int x, int y)
+#include "Calc.hpp"
+Student::Student()
 {
-    return x + y;
 }
-
-int sub(int x, int y)
+Student::Student(int score, std::string name) : score(score), name(name)
 {
-    return x - y;
+    std::cout << "Constructor is called " << std::endl;
+}
+bool Student::DisplayResult()
+{
+    if (score >= 50)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
