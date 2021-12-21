@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 #include "Calc.hpp"
+#include <typeinfo>
 
 TEST(SumFunction, Test_1)
 {
@@ -15,10 +16,7 @@ TEST(SubFunction, Test_1)
 {
     EXPECT_EQ(-1, sub(2, 3));
 }
-TEST(SubFunction, Test_2)
-{
-    EXPECT_NE(8, sum(12, 3));
-}
+
 int main()
 {
     ::testing::InitGoogleTest();
